@@ -1,0 +1,100 @@
+.navbar_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: var(--primary-color);
+}
+
+.navbar__links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    padding: 0.5rem;
+}
+
+.navbar__item a {
+    text-decoration: none;
+    color: #C1C1C1;
+}
+
+.navbar__actions a {
+    text-decoration: none;
+}
+
+.navbar__brand {
+    font-family: "Oleo Script";
+    font-size: 2rem;
+    color: #FFFF;
+}
+
+.navbar__link:hover {
+    color: #4FC3F7;
+}
+
+.active {
+    color: #0d8bc6 !important;
+    border-bottom: 0.5px solid #00eaff;
+}
+
+.bar_icon {
+    display: none;
+}
+
+@media (max-width:768px) {
+
+    .navbar__links {
+        display: flex;
+        flex-direction: column;
+        /* position: absolute; */
+        top: 0;
+        /* left: 100%; */
+        display: none;
+        transition: right 0.4s ease, opacity 0.4s ease;
+    }
+
+    .navbar__actions {
+        display: none;
+    }
+
+    .bar_icon {
+        display: block;
+        font-size: 1.5rem;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        position: fixed;
+        /* Keeps it fixed to the viewport */
+        top: 0;
+        /* Align to the top */
+        right: 0;
+        /* Stick to the left-most side */
+        z-index: 9999;
+        /* Ensures it stays above all other elements */
+        /* background: white; */
+        /* Optional - just for visibility */
+        padding: 1rem;
+        animation: slideIn 0.4s ease forwards;
+    }
+
+    .navbar_container {
+        /* position: relative; */
+        /* overflow: hidden; */
+    }
+
+    @keyframes slideIn {
+        0% {
+            right: -100%;
+            /* Start off-screen */
+        }
+
+        100% {
+            right: 0;
+            /* End at right edge */
+        }
+    }
+
+}

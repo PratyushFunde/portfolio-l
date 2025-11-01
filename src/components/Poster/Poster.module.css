@@ -1,0 +1,21 @@
+.main {
+
+    aspect-ratio: 1;
+    width: 100%;
+    max-width: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #76AAE8;
+    background: linear-gradient(180deg, rgba(118, 170, 232, 1) 0%, rgba(49, 142, 163, 1) 50%, rgba(42, 123, 155, 1) 100%);
+}
+
+.main img{
+    height:80%;
+    width: 80%;
+    scale: 1.2;
+    overflow: hidden;
+    border-radius: 50%;
+    object-fit: cover;
+}

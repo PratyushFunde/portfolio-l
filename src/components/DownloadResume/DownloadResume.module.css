@@ -1,0 +1,40 @@
+.main {
+    position: relative; /* required for pseudo-element */
+    height: 100%;
+    width: 100%;
+    padding: 0.6rem 2rem;
+    border-radius: 999px; 
+    border: 2px solid #4FC3F7;
+    cursor: pointer;
+    overflow: hidden; /* hide overflowing pseudo-element */
+    background-color: transparent;
+    color: #FFFFFF;
+    transition: color 0.3s ease; /* text color transition */
+}
+
+.main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--accent-color); /* hover fill color */
+    transform: scaleX(0); /* start collapsed */
+    transform-origin: left; /* fill from left */
+    transition: transform 0.3s ease;
+    z-index: 0; /* behind text */
+}
+
+.main:hover::before {
+    transform: scaleX(1); /* expand to full width */
+}
+
+.main p {
+    position: relative;
+    z-index: 1; /* on top of pseudo-element */
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+
