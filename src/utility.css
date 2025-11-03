@@ -1,4 +1,8 @@
 /* Border Utilities */
+html {
+  scroll-behavior: auto;
+}
+
 .bd1 { border: 2px solid #e63946; } /* Red */
 .bd2 { border: 2px solid #f77f00; } /* Orange */
 .bd3 { border: 2px solid #ffba08; } /* Yellow */
