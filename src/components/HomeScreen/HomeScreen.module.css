@@ -3,6 +3,8 @@
     width: 100%;
 }
 
+
+
 .content {
     width: 80%;
     /* height: 100%; */
@@ -112,4 +114,8 @@
     .name{
         font-size: 2rem;
     }
+}
+
+section{
+    margin-top: 5rem;
 }

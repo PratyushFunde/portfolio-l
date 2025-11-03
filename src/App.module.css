@@ -10,3 +10,9 @@
   flex: 1;
   overflow: auto;
 }
+
+.navbar{
+  position: fixed;
+  width: 100vw;
+  z-index: 100;
+}
