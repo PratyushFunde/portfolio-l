@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from "./ContactMeBtn.module.css"
 
 const ContactMeBtn = () => {

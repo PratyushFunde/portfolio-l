@@ -1,10 +1,9 @@
-import React from 'react'
 import styles from "./HomeScreen.module.css"
 import Poster from '../Poster/Poster'
 import ContactMeBtn from '../ContactmeBtn/ContactMeBtn'
 import About from '../About/About'
+import Experience from '../Experience/Experience'
 import Projects from '../Projects/Projects'
-import Resume from '../Resume/Resume'
 import GetInTouch from '../GetInTouch/GetInTouch'
 import Footer from '../Footer/Footer'
 
@@ -30,8 +29,11 @@ const HomeScreen = () => {
 
         </div>
       </section>
-      <section id='about' className={`${styles.about_section} ${styles.page_section}`}>
-        <About />
+
+
+      <section id="experience" className={`${styles.page_section}`}>
+        <p className='page-title' style={{ alignSelf: "center", justifySelf: 'center' }}>EXPERIENCE</p>
+        <Experience />
       </section>
 
       <section id="projects" className={`${styles.page_section}`}>
@@ -39,6 +41,9 @@ const HomeScreen = () => {
         <Projects />
       </section>
 
+      <section id="about" className={`${styles.about_section} ${styles.page_section}`}>
+        <About />
+      </section>
       <section id="getInTouch">
         <p className='page-title' style={{ alignSelf: "center", justifySelf: 'center' }}>Get In Touch</p>
         <GetInTouch />

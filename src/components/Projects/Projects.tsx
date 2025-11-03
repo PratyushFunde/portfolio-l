@@ -1,6 +1,4 @@
-import React from 'react'
 import styles from "./Projects.module.css"
-import { FiArrowUpRight } from "react-icons/fi";
 import ProjectCard from '../ProjectCard/ProjectCard';
 import type { project } from '../../models/project.model';
 

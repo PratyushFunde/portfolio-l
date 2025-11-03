@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from "../WhatIdo/WhatIdo.module.css"
 import bulb from "../../assets/bulb.svg"
 

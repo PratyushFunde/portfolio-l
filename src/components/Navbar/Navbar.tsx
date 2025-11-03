@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./Navbar.module.css";
 import ContactMeBtn from "../ContactmeBtn/ContactMeBtn";
-import { NavLink } from "react-router-dom";
 import { HiBars3CenterLeft } from "react-icons/hi2";
 import { IoMdClose } from "react-icons/io";
 
@@ -11,28 +10,8 @@ const Navbar: React.FC = () => {
 
   const toggle = () => setIsOpen(!isOpen);
 
-  // 🧭 Track scroll position and update active section
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll<HTMLElement>("section[id]");
-      let current = "";
 
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 150;
-        const sectionHeight = section.offsetHeight;
-        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-          current = section.getAttribute("id") || "";
-        }
-      });
-
-      setActiveSection(current);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // 🪄 Smooth scrolling behavior for internal links
+ 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     const targetElement = document.getElementById(targetId);
@@ -74,24 +53,15 @@ const Navbar: React.FC = () => {
 
           <li className={styles.navbar__item}>
             <a
-              href="#getInTouch"
-              //   className={({ isActive }) => (isActive ? styles.active : "")}
-              onClick={(e) => handleSmoothScroll(e, "projects")}
-              className={activeSection === "getInTouch" ? styles.active : ""}
+              href="#projects"
+              onClick={(e) =>{ handleSmoothScroll(e, "projects"),setActiveSection("")}}
+              className={activeSection === "projects" ? styles.active : ""}
             >
               Projects
             </a>
           </li>
 
-          <li className={styles.navbar__item}>
-            <a
-              href="#services"
-              onClick={(e) => handleSmoothScroll(e, "services")}
-              className={activeSection === "services" ? styles.active : ""}
-            >
-              Services
-            </a>
-          </li>
+          {/* If you later add a Services section, give it an id and enable this link. */}
           <li className={styles.navbar__item}>
             <a
               href="#getInTouch"
@@ -104,10 +74,11 @@ const Navbar: React.FC = () => {
 
           <li className={styles.navbar__item}>
             <a
-              href="#resume"
-            //   className={({ isActive }) => (isActive ? styles.active : "")}
+              href="#experience"
+              onClick={(e) => handleSmoothScroll(e, "experience")}
+              className={activeSection === "experience" ? styles.active : ""}
             >
-              Resume
+              Experience
             </a>
           </li>
         </ul>

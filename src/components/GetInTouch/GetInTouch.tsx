@@ -21,8 +21,51 @@ const GetInTouch = () => {
         console.log("Email:", email);
         console.log("Message:", message);
         console.log("Phone",phone)
+
+       
+    // Basic validation
+    if (!name.trim()) {
+        toast.error("Please enter your name");
+        setIsLoading(false);
+        return;
+    }
+
+    if (!email.trim()) {
+        toast.error("Please enter your email");
+        setIsLoading(false);
+        return;
+    }
+
+    // Check valid email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        toast.error("Please enter a valid email address");
+        setIsLoading(false);
+        return;
+    }
+
+    // if (!phone.trim()) {
+    //     toast.error("Please enter your phone number");
+    //     setIsLoading(false);
+    //     return;
+    // }
+
+    // Optional phone validation (10 digits)
+    // const phoneRegex = /^[0-9]{10}$/;
+    if (!phone) {
+        toast.error("Please enter phone number !");
+        setIsLoading(false);
+        return;
+    }
+
+    if (!message.trim()) {
+        toast.error("Please enter your message");
+        setIsLoading(false);
+        return;
+    }
+
         const res=await sendMail(name,email,message,String(phone)) ;
-        toast.error("Error")
+
         if (res.success) {
             toast.success("Message sent successfully thanks for reaching out! 🎉");
             setName("");

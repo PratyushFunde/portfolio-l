@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from "../DownloadResume/DownloadResume.module.css"
 
 const DownloadResume = () => {

@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from "../About/About.module.css"
 import DownloadResume from '../DownloadResume/DownloadResume'
 import WhatIdo from '../WhatIdo/WhatIdo'

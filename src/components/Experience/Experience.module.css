@@ -1,0 +1,71 @@
+.container {
+  padding: 2rem 1rem 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.card {
+  background: var(--card-bg, #0f1724);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.5);
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 520ms cubic-bezier(.2,.9,.2,1), transform 520ms cubic-bezier(.2,.9,.2,1);
+  will-change: opacity, transform;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.role {
+  font-size: 1rem;
+  margin: 0;
+  color: var(--text-strong, #e6eef8);
+}
+
+.period {
+  font-size: 0.82rem;
+  color: var(--muted, #9aa6b2);
+}
+
+.company {
+  margin: 0.35rem 0 0.5rem 0;
+  color: var(--accent, #a9d1ff);
+  font-weight: 600;
+}
+
+.bullets {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted, #b9c7d4);
+  font-size: 0.92rem;
+}
+
+.bullets li {
+  margin-bottom: 0.45rem;
+}
+
+/* small hover lift for desktop */
+@media (hover: hover) {
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 30px rgba(2,6,23,0.55);
+  }
+}

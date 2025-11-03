@@ -1,5 +1,3 @@
-import React from 'react'
-// Import the main component
 import { Viewer } from '@react-pdf-viewer/core';
 
 // Import the styles
