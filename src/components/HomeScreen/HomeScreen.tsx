@@ -30,16 +30,17 @@ const HomeScreen = () => {
         </div>
       </section>
 
+      <section id="projects" className={`${styles.page_section}`}>
+        <p className='page-title' style={{ alignSelf: "center", justifySelf: 'center' }}>PROJECTS</p>
+        <Projects />
+      </section>
 
       <section id="experience" className={`${styles.page_section}`}>
         <p className='page-title' style={{ alignSelf: "center", justifySelf: 'center' }}>EXPERIENCE</p>
         <Experience />
       </section>
 
-      <section id="projects" className={`${styles.page_section}`}>
-        <p className='page-title' style={{ alignSelf: "center", justifySelf: 'center' }}>PROJECTS</p>
-        <Projects />
-      </section>
+
 
       <section id="about" className={`${styles.about_section} ${styles.page_section}`}>
         <About />
